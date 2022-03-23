@@ -1,0 +1,30 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDgxMDAyMjN9.mNnvWjRgN-h7rMSXHoHt0xKLq9ZmJUlD7Qx4yq77h8o
+### sign up
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name":"jasper",
+  "email":"jasper@example.com",
+  "password":"password",
+  "password_confirmation":"password"
+}
+
+### sign in 
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email":"eliot@example.com",
+  "password":"password"
+}
+
+### show
+
+GET http://localhost:3000/users
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "email":"eliot@example.com"
+}
